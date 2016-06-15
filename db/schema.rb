@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321053026) do
+ActiveRecord::Schema.define(version: 20160615060134) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20160321053026) do
     t.string   "font_size",   limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",      limit: 255
+    t.string   "password",   limit: 255
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "blog_id",    limit: 4
   end
 
 end
